@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "a11",
+    "name": "Sayan",
+    "img": "./Peoples/1..png",
+    "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "time": "3:32pm"
+  },
+  {
+    "_id": "b22",
+    "name": "Angrycar",
+    "img": "./Peoples/2..png",
+    "message": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+    "time": "4:00pm"
+  },
+  {
+    "_id": "c33",
+    "name": "Firstapple",
+    "img": "./Peoples/3..png",
+    "message": "Lorem Ipsum is simply dummy text of the printing and industry.",
+    "time": "5:25pm"
+  },
+  {
+    "_id": "d44",
+    "name": "Sweetpotato",
+    "img": "./Peoples/4..png",
+    "message": "Lorem Ipsum is simply dummy text and typesetting industry.",
+    "time": "9:45am"
+  },
+  {
+    "_id": "e55",
+    "name": "Suman",
+    "img": "./Peoples/5..png",
+    "message": "Lorem dummy text of the printing and typesetting industry.",
+    "time": "3:30pm"
+  },
+  {
+    "_id": "f66",
+    "name": "Arijit",
+    "img": "./Peoples/6..png",
+    "message": "simply dummy text of the printing and typesetting industry.",
+    "time": "5:12am"
+  }
+]
