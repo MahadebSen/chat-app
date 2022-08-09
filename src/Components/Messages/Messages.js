@@ -9,8 +9,30 @@ const Messages = () => {
   useEffect(() => {
     fetch("fakeConnections.json")
       .then((res) => res.json())
-      .then((data) => setMessages(data));
+      .then((data) => {
+        setMessages(data);
+        localStorage.setItem("allMessages", JSON.stringify(data));
+      });
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchText = e.target.search.value;
+    console.log(searchText);
+
+    if (searchText) {
+      const storage = localStorage.getItem("allMessages");
+      if (storage) {
+        const storedMessages = JSON.parse(storage);
+        const users = storedMessages.filter(
+          (item) => item.name.toLowerCase() === `${searchText.toLowerCase()}`
+        );
+        setMessages(users);
+        console.log(users);
+      }
+    }
+    e.target.search.value = "";
+  };
 
   return (
     <section>
@@ -19,16 +41,19 @@ const Messages = () => {
           <div>
             <p className=" font-semibold">Messages</p>
           </div>
-          <div className="flex items-center">
-            <img className="w-5" src={search} alt="" />
+          <form onSubmit={handleSearch} className="flex items-center">
+            <button>
+              <img className="w-5" src={search} alt="" />
+            </button>
             <input
+              name="search"
               placeholder="Search"
-              className="border-black border-2 w-28 px-2"
+              className="border-black border-2 w-28 px-2 rounded-lg"
               type="text"
             />
-          </div>
+          </form>
         </div>
-        <div className="flex flex-col overflow-y-scroll max-h-[300px] no-scrollbar">
+        <div className="flex flex-col overflow-y-scroll max-h-[400px] no-scrollbar">
           {messages.map((item) => (
             <EachMessage key={item._id} item={item}></EachMessage>
           ))}

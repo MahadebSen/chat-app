@@ -40,5 +40,33 @@
     "img": "./Peoples/6..png",
     "message": "simply dummy text of the printing and typesetting industry.",
     "time": "5:12am"
+  },
+  {
+    "_id": "g77",
+    "name": "Sumit",
+    "img": "./Peoples/7..png",
+    "message": "Hello",
+    "time": "8:02am"
+  },
+  {
+    "_id": "h88",
+    "name": "Sayan",
+    "img": "./Peoples/8..png",
+    "message": "Hay hello, how are you?",
+    "time": "9:39pm"
+  },
+  {
+    "_id": "i99",
+    "name": "Suman",
+    "img": "./Peoples/9..png",
+    "message": "Hay buddy",
+    "time": "12:03am"
+  },
+  {
+    "_id": "j10",
+    "name": "Vivek",
+    "img": "./Peoples/10..png",
+    "message": "simply dummy text.",
+    "time": "5:22am"
   }
 ]
