@@ -18,7 +18,6 @@ const Messages = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const searchText = e.target.search.value;
-    console.log(searchText);
 
     if (searchText) {
       const storage = localStorage.getItem("allMessages");
@@ -28,7 +27,6 @@ const Messages = () => {
           (item) => item.name.toLowerCase() === `${searchText.toLowerCase()}`
         );
         setMessages(users);
-        console.log(users);
       }
     }
     e.target.search.value = "";
@@ -41,7 +39,10 @@ const Messages = () => {
           <div>
             <p className=" font-semibold">Messages</p>
           </div>
-          <form onSubmit={handleSearch} className="flex items-center">
+          <form
+            onSubmit={handleSearch}
+            className="flex items-center flex-row gap-2"
+          >
             <button>
               <img className="w-5" src={search} alt="" />
             </button>
@@ -53,11 +54,15 @@ const Messages = () => {
             />
           </form>
         </div>
-        <div className="flex flex-col overflow-y-scroll max-h-[400px] no-scrollbar">
-          {messages.map((item) => (
-            <EachMessage key={item._id} item={item}></EachMessage>
-          ))}
-        </div>
+        {messages.length > 0 ? (
+          <div className="flex flex-col overflow-y-scroll max-h-[400px] no-scrollbar">
+            {messages.map((item) => (
+              <EachMessage key={item._id} item={item}></EachMessage>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center py-4">No user found</p>
+        )}
       </div>
     </section>
   );
